@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Operations - GroupPro Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Operations";
+    var mkdocs_page_input_path = "main_functions.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> GroupPro Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Operations</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#usage">Usage</a></li>
+    
+
+    <li class="toctree-l2"><a href="#create-group">Create Group</a></li>
+    
+
+    <li class="toctree-l2"><a href="#edit-group">Edit Group</a></li>
+    
+
+    <li class="toctree-l2"><a href="#addremove-from-group">Add/Remove from Group</a></li>
+    
+
+    <li class="toctree-l2"><a href="#close-group">Close Group</a></li>
+    
+
+    <li class="toctree-l2"><a href="#dissolve">Dissolve</a></li>
+    
+
+    <li class="toctree-l2"><a href="#initialize-groups">Initialize groups</a></li>
+    
+
+    <li class="toctree-l2"><a href="#set-group-origin">Set group origin</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-group">Delete Group</a></li>
+    
+
+    <li class="toctree-l2"><a href="#pick-group">Pick Group</a></li>
+    
+
+    <li class="toctree-l2"><a href="#cleanup">CleanUP</a></li>
+    
+
+    <li class="toctree-l2"><a href="#flip-selection">Flip selection</a></li>
+    
+
+    <li class="toctree-l2"><a href="#make-unique">Make unique</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../materials/">Materials</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../editing_libraries/">Libraries</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../managing_visibility/">Isolating Groups</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../proxies/">Proxies</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">GroupPro Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Operations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>To create new group select objects you want to join, and press Ctrl+X -&gt; 'Create Group'. You will notice selected objects are now merged into one group, and cannot be selected individually. To edit group components you have to open it with 'Edit Group' button.</p>
+<p>After pressing it you will see green box around edited group (color depend on your settings in addon preferences). Any modifications performed on object that are member of group, will be saved after you press 'Close Group' button.</p>
+<p>You can add or remove objects from group, while you have group opened, using Add/Remove from group buttons.
+Note: If you remove all objects from group, while editing it, group will be deleted after pressing 'Close Group' button.</p>
+<h3 id="create-group">Create Group<a class="headerlink" href="#create-group" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/group_create.gif" />
+<em>Joins selected objects together into collection instance</em></p>
+<p>Joins selected objects in one, and creating CollectionInstance from them. After using this function you can press F9 to change group name or change group pivot location (median point or 3d cursor location).  </p>
+<h3 id="edit-group">Edit Group<a class="headerlink" href="#edit-group" title="Permanent link">&para;</a></h3>
+<p>You can perform modifications to CollectionInstance, add/remove objects from it, after pressing this button. You will notice green box around objects that are members of group. Also in bottom left corner, there will be info with name of currently edited group name. </p>
+<blockquote>
+<p><strong>NOTE</strong>: Color of edited group can be customized in addon preferences -&gt; View Tab. You can set it to be completely transparent if you want.</p>
+</blockquote>
+<h3 id="addremove-from-group">Add/Remove from Group<a class="headerlink" href="#addremove-from-group" title="Permanent link">&para;</a></h3>
+<p>Add/Remove from Group – while you are in edit group mode you can press those buttons to add/remove selected objects from/to group. Changes will be saved after Close Group.</p>
+<h3 id="close-group">Close Group<a class="headerlink" href="#close-group" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/group_close.gif" />
+<em>After editing group merges objects back together</em></p>
+<p>Saves changes performed while you were in edit group mode, merges objects back together. </p>
+<h3 id="dissolve">Dissolve<a class="headerlink" href="#dissolve" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/dissolve.gif" />
+<em>Split Group of objects into separate components</em></p>
+<p>Very similar to build in blender operator “make duplicates real (shift+ctrl+A)”. It splits Grouped object into separate, individual mesh objects.</p>
+<ul>
+<li>MaxDepth - parameter describes how many subgroups, from selected objects will be split. For example setting it to 1 - will split only main group, but not sub-groups.</li>
+</ul>
+<h3 id="initialize-groups">Initialize groups<a class="headerlink" href="#initialize-groups" title="Permanent link">&para;</a></h3>
+<p>Initialize groups – when you copy CollectionInstance from one blend file to another (using ctrl+c, ctrl+v), you may noticed pasted Group is messy - all objects, that the CollectionInstance is made of, are visible. To cleanup scene after pasting new Group into scene, select all the objects and press 'Initialize groups'. I will hide all unnecessary objects leaving only relevant Collection Instances.</p>
+<h3 id="set-group-origin">Set group origin<a class="headerlink" href="#set-group-origin" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/set_origin.gif" />
+<em>Change origin of selected group instance, while maintaining position of other instances</em></p>
+<p>Changes pivot point of selected CollectionInstance, while preserving position all other instances. This works only on active object.</p>
+<ul>
+<li>3d cursor</li>
+<li>Objects Center</li>
+<li>Bounding Box Bottom</li>
+<li>Bounding box center</li>
+</ul>
+<h3 id="delete-group">Delete Group<a class="headerlink" href="#delete-group" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/delete_group.gif" />
+<em>Removes group and all its instances permanently from scene</em></p>
+<p>Deletes group with subgroups and objects that this group is made of permanently from blender file. After using this operation you won't have access to deleted Group. In contrast using 'delete' key on keyboard, deletes group from scene, but you can still access and add back group from:  </p>
+<ul>
+<li>Shift+A → 'Collection instances” menu.</li>
+</ul>
+<h3 id="pick-group">Pick Group<a class="headerlink" href="#pick-group" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/pick_group.gif" />
+<em>Quickly open nested sub collection with <strong>Pick Group</strong></em></p>
+<p>If you have made group from sub groups, which have sub-groups, opening those nested sub-sub-groups may be time consuming. Pick group will let you open group which is directly under cursor, no matter how much nested it is inside parent groups.</p>
+<h3 id="cleanup">CleanUP<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h3>
+<p>Cleanup unused groups (groups that are currently not being linked to scene) - with content. Useful when there are lots of CollectionInstances under “Shift+A”→CollectionInstances, and you don't need them, if they are not on scene. This command will delete groups only if they are not used on scene. </p>
+<h3 id="flip-selection">Flip selection<a class="headerlink" href="#flip-selection" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/flip_selection.gif" /></p>
+<p>clones and mirrors object around chosen axis. After using this function you can press F9, to change axis of mirroring, pivot point (scene center, or 3d cursor), or disable duplication.
+This button was developed, because creating mirrored group instance is buggy, so I created 'Flip selection' button.</p>
+<h3 id="make-unique">Make unique<a class="headerlink" href="#make-unique" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/make_unique.gif" /></p>
+<p>Makes selected Group separate instance. Use it when you want to customize look of one Group, without affecting look of other instances that are already on scene.  </p>
+<ul>
+<li><strong>maxDepth</strong> - Maximum depth for which unique groups will be created. 0-inifinite depth, default=1 </li>
+<li><strong>De-instance meshes</strong> - do you want new collection instance objects to be instanced or copies</li>
+<li><strong>De-instance materials</strong> - do you want new collection instance materials to be instanced or copies</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: When you use <strong>Shift+D</strong> hotkey, to copy group - i will be un-instanced from original group automatically.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../materials/" class="btn btn-neutral float-right" title="Materials">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../materials/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

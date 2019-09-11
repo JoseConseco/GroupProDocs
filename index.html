@@ -8,12 +8,13 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Home - Group Pro Documentation</title>
+  <title>Home - GroupPro Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
   <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="extra.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -36,7 +37,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> Group Pro Documentation</a>
+        <a href="." class="icon icon-home"> GroupPro Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -53,7 +54,7 @@
     <a class="current" href=".">Home</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#group-pro-documentation">Group Pro Documentation</a></li>
+    <li class="toctree-l2"><a href="#grouppro-documentation">GroupPro Documentation</a></li>
     
 
     <li class="toctree-l2"><a href="#video-tutorial">Video Tutorial</a></li>
@@ -62,40 +63,46 @@
         
             <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
+            <li><a class="toctree-l3" href="#updating">Updating</a></li>
+        
         </ul>
     
 
-    <li class="toctree-l2"><a href="#usage">Usage</a></li>
+    <li class="toctree-l2"><a href="#location">Location</a></li>
     
-
-    <li class="toctree-l2"><a href="#create-group">Create Group</a></li>
-    
-
-    <li class="toctree-l2"><a href="#close-group">Close Group</a></li>
-    
-
-    <li class="toctree-l2"><a href="#set-group-origin">Set group origin</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-group">Delete Group</a></li>
-    
-
-    <li class="toctree-l2"><a href="#cleanup">CleanUP</a></li>
-    
-
-    <li class="toctree-l2"><a href="#flip-selection">Flip selection</a></li>
-    
-
-    <li class="toctree-l2"><a href="#make-unique">Make unique</a></li>
-    
-
-    <li class="toctree-l2"><a href="#convert-to-geometry">Convert to geometry</a></li>
-    
-
-    <li class="toctree-l2"><a href="#limitation-of-grouppro">Limitation of GroupPro</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#support">Support</a></li>
+        
+        </ul>
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="main_functions/">Operations</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="materials/">Materials</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="editing_libraries/">Libraries</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="managing_visibility/">Isolating Groups</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="proxies/">Proxies</a>
 	    </li>
           
         </ul>
@@ -108,7 +115,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">Group Pro Documentation</a>
+        <a href=".">GroupPro Documentation</a>
       </nav>
 
       
@@ -130,61 +137,62 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="group-pro-documentation"><a href="https://gumroad.com/l/GroupPro">Group Pro</a> Documentation<a class="headerlink" href="#group-pro-documentation" title="Permanent link">&para;</a></h3>
-<p><img alt="Group Pro Menu" src="img/GroupPro_banner.jpg" /></p>
+                <h3 id="grouppro-documentation"><a href="https://gumroad.com/l/GroupPro">GroupPro</a> Documentation<a class="headerlink" href="#grouppro-documentation" title="Permanent link">&para;</a></h3>
+<p><img alt="GroupPro Menu" src="img/GroupPro_banner.jpg" /></p>
+<p>GroupPro was made because default blender group instances are powerful, but they are not user friendly to work with. With GroupPro I managed to get rid of all annoying features of group instances:</p>
+<ul>
+<li>you can edit any collection instances on scene, not just the 'source' one</li>
+<li>you can work in recursive way - group instances, can be made of other subgroups, which can be made of subgroups etc. At any stage  </li>
+<li>subgroup can be edited and saved, with all instances updated in real-time</li>
+<li>easy mirroring of selected groups (fixes group instance mirror bug in blender)</li>
+<li>adjusting origin of group, without destroying positions of other instances placed in scene, or in another groups</li>
+<li>dissolving groups into individual objects</li>
+<li>making groups unique - un-instances selected group, while preserving its structure</li>
+<li>ability to edit linked libraries groups</li>
+<li>ability to create proxy version of group (lowpoly version for faster viewport navigation)</li>
+</ul>
+<p>This makes working with huge scenes with lots of objects easy and gives all the pros of group instances:</p>
+<ul>
+<li>less memory memory usage</li>
+<li>easy selection of multiple objects with one click</li>
+</ul>
 <h3 id="video-tutorial">Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permanent link">&para;</a></h3>
-<p>Click to watch it on <a href="https://www.youtube.com/watch?v=xa9OslcsHDI">Youtube</a></p>
+<p>For blender 2.79 but lots of things are the same in Blender2.8
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xa9OslcsHDI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 <h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h4>
-<p><img alt="Group Pro Menu" src="img/GP_installation.jpg" />
-File → User Preferences → Add-on tab
-Press 'Install from file' button, in bottom bar.
-Then you can search for addon by entering Group Pro in search bar. Be sure to have 'Community' button enabled under search bar. Press checkbox next to addon name to enable it, and then press 'Save user settings' so that Blender always loads GroupPro at startup. If you want you can also enable PivotPro, which is included in zip file you downloaded. Just search for pivot</p>
-<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
-<p>Addon adds new panel in 3d view, in tools shelf → Relations tab.
-You can acess Group Pro menu under'ctrl+X' hotkey:
-<img alt="Group Pro Menu" src="img/GP_CtrlX_menu.jpg" /></p>
-<p>To create new group select objects you want to join, and press 'Create Group'. You will notice selected objects are now merged into one group, and cannot be selected individually. To edit group components you have to open it with 'Edit Group' button.</p>
-<p>After pressing it you will see green box around edited group (color depend on your settings in addon preferences). Any modifications performed on object that are member of group, will be saved after you press 'Close Group' button.</p>
-<p>You can add or remove objects from group, while you have group opened, using Add/Remove from group buttons.
-Note: If you remove all objects from group, while editing it, group will be deleted after pressing 'Close Group' button.</p>
-<h3 id="create-group">Create Group<a class="headerlink" href="#create-group" title="Permanent link">&para;</a></h3>
-<p>Joins selected objects in one, and creating GroupInstance from them. After using this function you can press F6 to change group name or change group pivot location (median point or 3d cursor location).
-Edit Group – you can perform modifications to GroupInstance, add/remove objects from it, after pressing this button. You will notice green box around objects that are members of group. Also in bottom left corner, there will be info with name of currently edited group name. </p>
-<h3 id="close-group">Close Group<a class="headerlink" href="#close-group" title="Permanent link">&para;</a></h3>
-<p>Saves changes performed while you were in edit group mode, and merges objects back together. 
-Add/Remove from Group – while you are in edit group mode you can press those buttons to add/remove selected objects from/to group. Changes will be saved after pressing Close Group button.</p>
-<h3 id="set-group-origin">Set group origin<a class="headerlink" href="#set-group-origin" title="Permanent link">&para;</a></h3>
-<p>Changes pivot point  of selected GroupInstance. This works only on active object.</p>
-<h3 id="delete-group">Delete Group<a class="headerlink" href="#delete-group" title="Permanent link">&para;</a></h3>
-<p>Deletes group with subgroups and objects that this group is made of permanently from blender file. After using this operation you won't have access to deleted Group. In contrast using 'delete' key on keyboard, deletes group from scene, but you can still access and add back group from  “shift+a”→'group instances” menu.</p>
-<h3 id="cleanup">CleanUP<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h3>
-<p>Cleanup unused groups (groups that are currently not being linked to scene) - with content. Useful when there are lots of GroupInstances under “Shift+A”→GroupInstances, and you don't need them, if they are not on scene. This command will delete groups only if they are not used on scene.  On image below, we have clean scene, but there are two groups (CopyGroupGrid,GroupGrid). After using 'CleanUp' operator both of those groups will be deleted.</p>
-<h3 id="flip-selection">Flip selection<a class="headerlink" href="#flip-selection" title="Permanent link">&para;</a></h3>
-<p>clones and mirrors object around chosen axis. After using this function you can press F6, to change axis of mirroring, pivot point (scene center, or 3d cursor), or disable duplication.
-This button was developed, because creating mirrored group instance is buggy, so I created 'Flip selection' button.</p>
-<h3 id="make-unique">Make unique<a class="headerlink" href="#make-unique" title="Permanent link">&para;</a></h3>
-<p>Makes selected Group separate instance. Use it when you want to customize look of one Group, without affecting look of other instances that are already on scene. 'Make Unique' has  'maxDepth'  parameter - Maximum depth for which unique groups will be created. 0-inifinite depth, default=1 </p>
-<h3 id="convert-to-geometry">Convert to geometry<a class="headerlink" href="#convert-to-geometry" title="Permanent link">&para;</a></h3>
-<p>Very similar to build in blender operator “make duplicates real (shift+ctrl+A)”. It splits Grouped object into separate, individual mesh objects.
-Initialize groups – when you copy GroupInstance from one blend file to another (using ctrl+c, ctrl+v), you may noticed pasted Group is messy - all objects, that the GroupInstance is made of, are visible. To cleanup scene after pasting new Group into scene, select all the objects and press 'Initialize groups'. I will hide all unnecessary objects leaving only relevant GroupInstances.</p>
-<h3 id="limitation-of-grouppro">Limitation of GroupPro<a class="headerlink" href="#limitation-of-grouppro" title="Permanent link">&para;</a></h3>
+<p>To install GroupPro you need zip file from your <a href="https://gumroad.com/">Gumroad</a> account.<br />
+Then, inside Blender, go to:</p>
 <ul>
-<li>
-<p>As a final note, I want to warn you not to use group offset feature, form group panel. Group offset is used by script for calculating data, and it should be never edited by hand. If you do so, group offset will be calculated in wrong way, which will result in incorrect display of group instances.</p>
-</li>
-<li>
-<p>Baking in supported only through addons. There are two addons:</p>
+<li>Edit -&gt; Preferences -&gt; Add-ons, and click '<strong>Install</strong>' button. </li>
+</ul>
+<p><img alt="GroupPro Menu" src="img/GP_installation.jpg" /></p>
+<p>And navigate to <strong>GroupPro_2.x.zip</strong> (for Blender 2.8) file location.</p>
+<h4 id="updating">Updating<a class="headerlink" href="#updating" title="Permanent link">&para;</a></h4>
+<p>GroupPro has build in auto updater. When you use it, updater will download latest GroupPro release and install in background. To use auto updater go to:</p>
 <ul>
-<li><a href="https://github.com/JoseConseco/cycles_baker">Free fork of Metldown</a> – baking in cycles bit slow. For now works only in blender 2.79. I do not provide support for this.</li>
-<li><a href="https://gumroad.com/l/BatchtoolsBaker">Batchtool Baker</a> – Baking is done through Allegorithmic Substance Batchotools. This is addon I'm going to fix/develop because it is way faster for baking, and I use it in my commercial jobs. Batchtool baker works also without GroupPro.</li>
+<li>Edit -&gt; Preferences -&gt; Add-ons -&gt; GroupPro -&gt;  press 'Check for update'. </li>
 </ul>
-</li>
-<li>editing groups linked from external file is also not supported.</li>
-</ul>
+<p>In new version is found, press '<strong>Update addon</strong>' button, wait few seconds for download, installation and restart blender. Or you download update manually by getting new zip file from your <a href="https://gumroad.com/">Gumroad</a> account. You should have received download link to zip file, with email when you purchased GroupPro.</p>
+<h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
+<p>You can acess GroupPro menu under'ctrl+X' hotkey:
+Addon adds new panel in 3d view, in located in right Sidebar(N): <strong>"GroupPro"</strong> tab (tab can be changed in addon preferences).
+<img alt="GroupPro Menu" src="img/GP_CtrlX_menu.jpg" /></p>
+<h4 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h4>
+<p><strong>For support or bug reports use <a href="https://discord.gg/cxZDbqH">this discord server</a></strong>.</p>
+<blockquote>
+<p><strong>Note</strong> -Do no use group offset feature, form group panel. Group offset is used by script for calculating data, and it should be never edited by hand. If you do so, group offset will be calculated in wrong way, which will result in incorrect display of group instances.</p>
+</blockquote>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="main_functions/" class="btn btn-neutral float-right" title="Operations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>
@@ -209,6 +217,8 @@ Initialize groups – when you copy GroupInstance from one blend file to another
       
       
       
+        <span style="margin-left: 15px"><a href="main_functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
     </span>
 </div>
     <script>var base_url = '.';</script>
@@ -220,5 +230,5 @@ Initialize groups – when you copy GroupInstance from one blend file to another
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-02-15 12:49:36
+Build Date UTC : 2019-09-11 23:05:28
 -->
