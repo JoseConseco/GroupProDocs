@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Proxies - GroupPro Documentation</title>
+    <title>Exporting Groups - GroupPro Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Proxies";
-        var mkdocs_page_input_path = "proxies.md";
+        var mkdocs_page_name = "Exporting Groups";
+        var mkdocs_page_input_path = "exporting_groups.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,18 +52,18 @@
                 <li class="toctree-l1"><a class="reference internal" href="../materials/">Materials</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../exporting_groups/">Exporting Groups</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Exporting Groups</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../managing_visibility/">Managing Visibility</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Proxies</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../proxies/">Proxies</a>
                 </li>
               </ul>
       </div>
@@ -80,7 +80,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Proxies</li>
+      <li class="breadcrumb-item active">Exporting Groups</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -89,30 +89,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h3 id="proxies">Proxies<a class="headerlink" href="#proxies" title="Permanent link">&para;</a></h3>
-<p>Creating Proxies for group will create low-poly version of current group objects , and use it for displaying in viewport. Original group objects are not being affected, and can be brought back with  'Proxy Switch' button.</p>
-<h3 id="create-proxy">Create Proxy<a class="headerlink" href="#create-proxy" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Proxy" src="../img/create_proxy.gif" />
-<em>Generating proxy for selected group</em>
-There are three methods for generating low poly version of proxy object under <strong>F9</strong> hotkey:</p>
-<ul>
-<li>Convex Hull (Fastest) - but gives crude approximation of hi-poly mesh.</li>
-<li>Only Decimate - use Decimate modifier</li>
-<li>Remesh And Decim(Slow) - use remesh modifier and Decimate - useful in some cases</li>
-</ul>
-<h3 id="proxy-switch">Proxy Switch<a class="headerlink" href="#proxy-switch" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Proxy" src="../img/proxy_switch.gif" />
-<em>Generating proxy for selected group</em></p>
-<p>Proxy Switch - will lets you switch form original object to proxy, and vice versa.</p>
-<h3 id="delete-proxy">Delete Proxy<a class="headerlink" href="#delete-proxy" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Proxy" src="../img/delete_proxy.gif" />
-<em>Removes proxy for selected group</em></p>
-<p>Removes Proxy object, and unlinks it from original collection.</p>
+                <h3 id="exporting-groups">Exporting Groups<a class="headerlink" href="#exporting-groups" title="Permanent link">&para;</a></h3>
+<p>Since release of GroupPro 3.0, groups are now represented as empty mesh object + Instance modifier. This mean exporting of groups changed:</p>
+<ol>
+<li><strong>Fbx</strong> export won't work with new mesh groups directly. Instead, you can use <a href="../main_functions/#dissolve">Dissolve</a>, to split grouped objects, then export the flattened hierarchy. After export, you could undo the dissolve to get back the groups.</li>
+</ol>
+<p><img alt="Dissolve Group" src="../img/dissolve_fbx.jpg" />
+<em>Use: MaxDept: 0, Use Empties Hierarchy: True</em></p>
+<ol>
+<li><strong>Alembic</strong> - works ok with new mesh groups. Uses mesh child-parent relations, to recreate nested group hierarchy,</li>
+<li><strong>USD</strong> - works ok. Exported group will use empties child-parent hierarchy</li>
+</ol>
+<p>In general blender dose not like the dissolve to much (can crash randomly ). So I would use Alembic, or USD</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../managing_visibility/" class="btn btn-neutral float-left" title="Managing Visibility"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../materials/" class="btn btn-neutral float-left" title="Materials"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../managing_visibility/" class="btn btn-neutral float-right" title="Managing Visibility">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -135,8 +129,10 @@ There are three methods for generating low poly version of proxy object under <s
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../managing_visibility/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../materials/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../managing_visibility/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
