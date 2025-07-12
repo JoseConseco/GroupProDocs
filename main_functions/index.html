@@ -59,6 +59,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#dissolve">Dissolve</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#group-from-selection">Group from Selection</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#initialize-groups">Initialize groups</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#set-group-origin">Set group origin</a>
@@ -142,14 +144,45 @@ Note: If you remove all objects from group, while editing it, group will be dele
 <em>After editing group merges objects back together</em></p>
 <p>Saves changes performed while you were in edit group mode, merges objects back together.</p>
 <h3 id="dissolve">Dissolve<a class="headerlink" href="#dissolve" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="../img/dissolve.gif" />
-<em>Split Group of objects into separate components</em></p>
+<video style="width:100%" controls>
+<source src="../img/dissolve.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p><em>Split Group of objects into individual components</em></p>
 <p>Very similar to build in blender operator “make duplicates real (shift+ctrl+A)”. It splits Grouped object into separate, individual mesh objects.</p>
 <ul>
-<li>MaxDepth - parameter describes how many subgroups, from selected objects will be split. For example setting it to 1 - will split only main group, but not sub-groups.</li>
+<li><strong>Depth</strong> - Specifies how deep the group hierarchy will be dissolved. Set to 0 for infinite depth (default: 1).</li>
+<li>
+<p><strong>Hierarchy</strong>:</p>
+<ul>
+<li><strong>Flat</strong> - Dissolves groups into individual objects without preserving the hierarchy structure.</li>
+<li><strong>Use Empties</strong> - When enabled, dissolved groups are represented as empty objects linked through parent-child relationships. This preserves the group hierarchy, allowing you to see which objects were originally grouped together.</li>
+<li><strong>Use Collections</strong> - When enabled, dissolved groups are represented as collections. This preserves the group hierarchy, allowing you to see which objects were originally grouped together.</li>
+</ul>
+</li>
+<li>
+<p><strong>Apply Modifiers</strong> - When GropPro: Radial or Linear array modifiers are found, they will be dissolved into individual objects.</p>
+</li>
+</ul>
+<h3 id="group-from-selection">Group from Selection<a class="headerlink" href="#group-from-selection" title="Permanent link">&para;</a></h3>
+<video style="width:100%" controls>
+<source src="../img/group_from_selection.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p><em>Creates new group from selected empties object hierarchy. Could be used to convert imported Sketchup components to Blender Groups (collections)</em></p>
+<ul>
+<li><strong>Fix Sketchup object orientation</strong> - When enabled, the orientation of the Sketchup object is corrected to match Blender's coordinate system. Not needed for other objects.</li>
 </ul>
 <h3 id="initialize-groups">Initialize groups<a class="headerlink" href="#initialize-groups" title="Permanent link">&para;</a></h3>
-<p>Initialize groups – when you copy CollectionInstance from one blend file to another (using ctrl+c, ctrl+v), you may noticed pasted Group is messy - all objects, that the CollectionInstance is made of, are visible. To cleanup scene after pasting new Group into scene, select all the objects and press 'Initialize groups'. I will hide all unnecessary objects leaving only relevant Collection Instances.</p>
+<video style="width:100%" controls>
+<source src="../img/dissolve.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<p>When you copy a Group object from one blend file to another (using Ctrl+C, Ctrl+V), you may notice that pasted Groups appear messy - all objects that make up the Collection are visible. To clean up the scene after pasting a new Group, select all the objects and press 'Initialize groups'. This will hide all unnecessary objects, leaving only the relevant Collection Instances.</p>
+<blockquote>
+<p><strong>Note</strong>: By default, GroupPro overrides the paste (Ctrl+V) hotkey to use the 'Initialize groups' function. If you want to use the default Blender paste behavior, go to GroupPro preferences &gt; Hotkeys and disable the 'Paste' hotkey override.</p>
+</blockquote>
 <h3 id="set-group-origin">Set group origin<a class="headerlink" href="#set-group-origin" title="Permanent link">&para;</a></h3>
 <p><img alt="Create Group" src="../img/set_origin.gif" />
 <em>Change origin of selected group instance, while maintaining position of other instances</em></p>
@@ -169,8 +202,8 @@ Note: If you remove all objects from group, while editing it, group will be dele
 </ul>
 <h3 id="pick-group">Pick Group<a class="headerlink" href="#pick-group" title="Permanent link">&para;</a></h3>
 <p><img alt="Create Group" src="../img/pick_group.gif" />
-<em>Quickly open nested sub collection with </em><em>Pick Group</em>**</p>
-<p>If you have made group from sub groups, which have sub-groups, opening those nested sub-sub-groups may be time consuming. Pick group will let you open group which is directly under cursor, no matter how much nested it is inside parent groups.</p>
+<em>Quickly open nested sub collection with <code>Pick Group</code></em></p>
+<p>If you have made group from sub groups, which have sub-groups, opening those nested sub-sub-groups may be time-consuming. Pick group will let you open group which is directly under cursor, no matter how much nested it is inside parent groups.</p>
 <h3 id="cleanup">CleanUP<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h3>
 <p>Cleanup unused groups - groups that are currently not being linked to scene. Useful when there are lots of Collection Instances under “Shift+A” -&gt; Collection Instances, and you are not using them. This command will delete groups only if they are not used on scene.</p>
 <h3 id="flip-selection">Flip selection<a class="headerlink" href="#flip-selection" title="Permanent link">&para;</a></h3>

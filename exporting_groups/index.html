@@ -92,15 +92,14 @@
                 <h3 id="exporting-groups">Exporting Groups<a class="headerlink" href="#exporting-groups" title="Permanent link">&para;</a></h3>
 <p>Since release of GroupPro 3.0, groups are now represented as empty mesh object + Instance modifier. This mean exporting of groups changed:</p>
 <ol>
-<li><strong>Fbx</strong> export won't work with new mesh groups directly. Instead, you can use <a href="../main_functions/#dissolve">Dissolve</a>, to split grouped objects, then export the flattened hierarchy. After export, you could undo the dissolve to get back the groups.</li>
+<li><strong>FBX</strong> export won't work with new, instance modifier based groups directly. Instead, you use <a href="../main_functions/#dissolve">Dissolve</a>, to split grouped objects, into empties based hierarchy (or flat one if you choose so). After export is done, you can undo the dissolve to restore the original groups.</li>
 </ol>
 <p><img alt="Dissolve Group" src="../img/dissolve_fbx.jpg" />
 <em>Use: MaxDept: 0, Use Empties Hierarchy: True</em></p>
 <ol>
-<li><strong>Alembic</strong> - works ok with new mesh groups. Uses mesh child-parent relations, to recreate nested group hierarchy,</li>
-<li><strong>USD</strong> - works ok. Exported group will use empties child-parent hierarchy</li>
+<li><strong>Alembic</strong> - works ok with new mesh groups. Alembic will automatically use mesh child-parent relations, to recreate nested group hierarchy,</li>
+<li><strong>USD</strong> - works ok. Exported group will automatically use empties child-parent hierarchy</li>
 </ol>
-<p>In general blender dose not like the dissolve to much (can crash randomly ). So I would use Alembic, or USD</p>
               
             </div>
           </div><footer>
